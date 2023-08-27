@@ -14,19 +14,22 @@ Limited to digital transactions.
 Requires familiarity with blockchain technology.
 
 # Key Points:
-`owner`: The Ethereum address of the car owner, who initiates the contract.
-`carDetails`: A string containing details about the car being sold (e.g., make, model, year).
-price: The price in Ether (ETH) that the buyer must pay to purchase the car.
-`isCarSold`: A boolean value indicating whether the car has been sold.
-Modifiers:
-`onlyOwner()`: A modifier ensuring that only the car owner can perform specific actions.
-`carNotSold()`: A modifier ensuring that the car has not been sold before certain actions can be executed.
-Functions:
-`constructor(string memory _carDetails, uint256 _price)`: A constructor that initializes the contract with the car's details and price.
-`purchaseCar() external payable`: A function allowing buyers to purchase the car by sending the specified amount of Ether. The car must not have been sold already.
-`withdrawFunds() external onlyOwner`: A function allowing the car owner to withdraw the Ether balance after the car has been sold.
+* `owner`: The Ethereum address of the car owner, who initiates the contract.
+* `carDetails`: A string containing details about the car being sold (e.g., make, model, year).
+* `price`: The price in Ether (ETH) that the buyer must pay to purchase the car.
+* `isCarSold`: A boolean value indicating whether the car has been sold.
+  
+# Modifiers:
+* `onlyOwner()`: A modifier ensuring that only the car owner can perform specific actions.
+* `carNotSold()`: A modifier ensuring that the car has not been sold before certain actions can be executed.
+  
+# Functions:
+* `constructor(string memory _carDetails, uint256 _price)`: A constructor that initializes the contract with the car's details and price.
+* `purchaseCar() external payable`: A function allowing buyers to purchase the car by sending the specified amount of Ether. The car must not have been sold already.
+* `withdrawFunds() external onlyOwner`: A function allowing the car owner to withdraw the Ether balance after the car has been sold.
+  
 # Events:
-`CarPurchased(address indexed buyer, uint256 price)`: An event emitted when a car is successfully purchased. It includes the buyer's address and the amount paid.
+* `CarPurchased(address indexed buyer, uint256 price)`: An event emitted when a car is successfully purchased. It includes the buyer's address and the amount paid.
 
 # Usage:
 Deploy the `SmartCarContract` to the Ethereum blockchain.
